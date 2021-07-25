@@ -2,23 +2,38 @@
 {% load static %}
 <html lang="en" dir="ltr">
 <head>
+  <title>
+    Project Development | Certification Dumps | Courses
+  </title>
+  <link rel = "icon" href ="{% static "images/logo.png" %}" type = "image/x-icon">
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<style>
+  #loader1 {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #fff url('{% static "images/loader.gif" %}') no-repeat center;
+    z-index: 99999;
+  }
+</style>
 </head>
 
-<body>
+<body onload="myFunction()">
+  <div id="loader1"></div>
   {% include "coder/navbar.html" %}
 <br><br>
 
- 
+
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="{% static "images/security1.jpg" %}" alt="First slide">
+      <img class="d-block w-100" src="{% static "images/slider1.jpg" %}" alt="First slide">
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="{% static "images/security2.jpg" %}" alt="Second slide">
@@ -90,10 +105,15 @@
 
 <br><br>
 <hr>
+
+<div class="container text-center" id="contact">
+  <h1 class="text-center font-weight-bold" style="font-family : Monotype Corsiva;color : #7200dd">Donate Us</h1>
+<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HdA6djewvg3CIf" async> </script> </form>
+
+</div>
 <br>
-
-
-
+<hr>
+<br>
 
 <div class="container text-center" id="contact">
   <h1 class="text-center font-weight-bold" style="font-family : Monotype Corsiva;color : #EE1D29">Contact Us</h1>
@@ -123,10 +143,15 @@
 
 
 
-
-
-
   {% include "coder/footer.html" %}
+
+<script>
+  var preloader = document.getElementById('loader1');
+  function myFunction(){
+    preloader.style.display='none';
+  }
+</script>
+
 </body>
 
 </html>

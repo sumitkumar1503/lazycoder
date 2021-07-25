@@ -23,3 +23,6 @@ def afterlogin_view(request):
         return redirect('customer-dashboard')
     else:
         return redirect('admin-dashboard')
+
+def donate_view(request):
+    return render(request,'coder/donate.html')

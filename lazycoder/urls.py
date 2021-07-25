@@ -12,6 +12,7 @@ urlpatterns = [
     path('customerlogin', LoginView.as_view(template_name='coder/customerlogin.html'),name='customerlogin'),
 
     path('afterlogin', views.afterlogin_view,name='afterlogin'),
+    path('donate', views.donate_view,name='donate'),
 
     path('logout', LogoutView.as_view(template_name='coder/logout.html'),name='logout'),
 ]
