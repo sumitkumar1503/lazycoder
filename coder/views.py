@@ -23,6 +23,17 @@ def afterlogin_view(request):
         return redirect('customer-dashboard')
     else:
         return redirect('admin-dashboard')
+def viewprojects_view(request,projectname):
+    project = models.Projects.objects.get(name=projectname)
+    return render(request,'coder/viewprojects.html',{'project':project})
 
-def donate_view(request):
-    return render(request,'coder/donate.html')
+def terms_view(request):
+    return render(request,'coder/terms.html')
+def privacy_view(request):
+    return render(request,'coder/privacy.html')
+def refund_view(request):
+    return render(request,'coder/refund.html')
+def aboutus_view(request):
+    return render(request,'coder/aboutus.html')
+def contactus_view(request):
+    return render(request,'coder/contactus.html')

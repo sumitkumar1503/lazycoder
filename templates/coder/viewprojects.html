@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        .pqr {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+    </style>
+</head>
+<body>
+    {% include "coder/loader_whatsapp.html" %}
+    {% include "coder/navbar.html" %}
+    <br><br><br>
+    <h4 style="text-align:center;color:blue;background-color:#e5edbe;padding-top: 4px;padding-bottom: 5px;">{{project}}</h4><br>
+	<div class="wrapper" >
+
+        
+    
+    
+    <div class="center">
+        <div class="pqr">
+            <iframe width="650" height="360"  class="responsive-iframe" frameborder="0" allow=" picture-in-picture"  src="{{project.youtubelink}}">
+            </iframe><br><br>
+        </div>
+      
+      
+      <h3 style="text-align:center;color:red;">Description : {{project.description}}</h3>
+      <h3 style="text-align:center;color:red;">technologies: {{project.technologies}}</h3>
+      <h3 style="text-align:center;color:red;">price: {{project.price}}</h3>
+
+    </div>
+    </div>
+    
+  
+        
+  {% include "coder/footer.html" %}
+</body>
+</html>

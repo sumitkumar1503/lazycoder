@@ -21,11 +21,17 @@
   .xyz {
     font-size: 20px;
   }
+  .cor{
+    height: 350px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .xyz {
     font-size: 13px;
+  }
+  .cor{
+    height: 200px;
   }
 }
   </style>
@@ -36,24 +42,24 @@
   {% include "coder/loader_whatsapp.html" %}
   {% include "coder/navbar.html" %}
   <br><br>
-  <div class="jumbotron" style="background-color: #0274be;  padding-top: 27px;padding-bottom: 2px;border-radius:.0rem;">
+  <div class="jumbotron" style="background-color: #0274be;  padding-top: 27px;padding-bottom: 2px;border-radius:.0rem;margin-bottom: 0%;">
     <h5 style="color: white;" class="text-center xyz">READY MADE ERROR FREE FINAL YEAR PROJECTS FROM Rs 499* ONWARDS
     </h5>
   </div>
 
 
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleIndicators" style="margin-top: 0%;" class="carousel slide" data-ride="carousel">
 
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="{% static "images/slider1.jpg" %}" alt="First slide">
+        <img class="d-block w-100 cor" src="{% static "images/slider1.jpg" %}" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="{% static "images/security2.jpg" %}" alt="Second slide">
+        <img class="d-block w-100 cor" src="{% static "images/slider2.jpg" %}" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block w-100" src="{% static "images/security3.jpg" %}" alt="Third slide">
+        <img class="d-block w-100 cor" src="{% static "images/slider3.jpg" %}" alt="Third slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -67,70 +73,8 @@
   </div>
 
 
-
-  
-  <div class="jumbotron">
-
-    <p class="lead">We live in a world that has walls and those walls need to be guarded by men with guns.
-    </p>
-
-    <p>- Aaron Sorkin</p>
-
-  </div>
-
-  <div class="container-fluid text-center">
-    <h2 style="color:rgb(39, 1, 255)">SERVICES</h2>
-    <h4>What we offer</h4>
-    <br>
-    <div class="row">
-      <div class="col-sm-4">
-        <i class="fas fa-user-shield" style="font-size:60px;color:rgb(255, 0, 0)"></i><br>
-        <h4">Security Guards</h4>
-          <p>We Provide Best Professional Security Guards</p>
-      </div>
-      <div class="col-sm-4">
-        <i class="fas fa-user" style="font-size:60px;color:rgb(255, 0, 0)"></i>
-        <h4>NCC Volunteer</h4>
-        <p>Ex NCC Volunteer</p>
-      </div>
-      <div class="col-sm-4">
-        <i class="fas fa-user-tie" style="font-size:60px;color:rgb(255, 0, 0)"></i>
-        <h4>Army Personnel</h4>
-        <p>Ex Army Personnel</p>
-      </div>
-    </div>
-    <br><br>
-    <div class="row">
-      <div class="col-sm-4">
-        <i class="fas fa-calendar-alt" style="font-size:60px;color:rgb(255, 0, 0)"></i>
-        <h4>Event Management</h4>
-        <p>We Manage Various Events</p>
-      </div>
-      <div class="col-sm-4">
-        <i class="fas fa-user-secret" style="font-size:60px;color:rgb(255, 0, 0)"></i>
-        <h4>Personal BodyGuards</h4>
-        <p>Professional and Best Guards</p>
-      </div>
-      <div class="col-sm-4">
-        <i class="fas fa-camera" style="font-size:60px;color:rgb(255, 0, 0)"></i>
-        <h4>CCTV Setup</h4>
-        <p>CCTV Monitoring Setup</p>
-      </div>
-    </div>
-  </div>
-
-  <br><br>
-  <hr>
-
-  <div class="container text-center" id="contact">
-    <h1 class="text-center font-weight-bold" style="font-family : Monotype Corsiva;color : #7200dd">Donate Us</h1>
-    <form>
-      <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HdA6djewvg3CIf" async>
-      </script>
-    </form>
-
-  </div>
-  <br>
+  {% include "coder/projects.html" %}
+ 
   <hr>
   <br>
 

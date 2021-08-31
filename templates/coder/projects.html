@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width: 576px) {  
+  .xs {color:red;font-weight:bold;}
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width:768px) {  
+  .sm {color:red;font-weight:bold;}
+  
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) and (max-width:992px) {  
+ .md {color:red;font-weight:bold;}
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width:1200px) { 
+ .lg {color:red;font-weight:bold;}
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+    .xl {color:red;font-weight:bold;}
+}
+
+
+@media screen and (max-width: 600px) {
+  .card{
+      margin: 20px;
+  }
+}
+
+ 
+    </style>
+</head>
+<body>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading mb-2 text-center">
+                    <h3 style="font-family: 'Nunito', sans-serif;">Shop from Top Categories</h3>
+                </div>
+            </div>  
+        </div>
+       
+    <div class="row">
+        <div class="col-xl col-sm-4">
+          <div class="card">
+            <div class="card-header bg-primary text-center" style="color: white;"><strong>Hospital Management System </strong></div>
+            <img src="{% static "images/hospital.png" %}" height="200px" width="200px" class="card-img-top" alt="...">
+            <div class="card-body">
+                
+                <p class="card-text">It is a web application where doctor, patient and admin can perform CRUD operations</p>
+               <p class="text-center">
+                <a href="viewprojects/hospital" class="btn btn-info" style="margin-right:5px;"><i class="fas fa-eye"></i> View Details</a>
+                <a href="https://www.github.com/sumitkumar1503/hospitalmanagement/archive/refs/heads/master.zip"" class="btn btn-success"><i class="fas fa-download"></i> FREE Download</a>
+               </p>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-xl col-sm-4">
+          <div class="card">
+            <img src="{% static "images/categories/vegetable.png" %}" height="200px" width="200px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6 class="card-title text-center">Vegetables</h6>
+               
+            </div>
+          </div>
+        </div>
+        <div class="col-xl col-sm-4">
+          <div class="card">
+            <img src="{% static "images/categories/bevrage.png" %}" height="200px" width="200px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h6 class="card-title text-center">Bevrage</h6>
+              
+            </div>
+          </div>
+        </div>
+        
+        
+ 
+    </div>
+<br>
+       
+<div class="row">
+    
+    
+    <div class="col-xl col-sm-4">
+      <div class="card">
+        <img src="{% static "images/categories/babycare.png" %}" height="200px" width="200px" class="card-img-top" alt="...">
+        
+        <div class="card-body">
+            <h6 class="card-title text-center">Baby care</h6>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-xl col-sm-4">
+      <div class="card">
+        <img src="{% static "images/categories/personalcare.png" %}" height="200px" width="200px" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title text-center">Personal Care</h6>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-xl col-sm-4">
+      <div class="card">
+        <img src="{% static "images/categories/dryfruits.png" %}" height="200px" width="200px" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h6 class="card-title text-center">Dry Fruits</h6>
+           
+        </div>
+      </div>
+    </div>
+
+</div>
+<br>
+        
+     
+        
+        
+      </div>
+      <!-- /.container -->
+</body>
+</html>

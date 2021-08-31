@@ -12,7 +12,15 @@ urlpatterns = [
     path('customerlogin', LoginView.as_view(template_name='coder/customerlogin.html'),name='customerlogin'),
 
     path('afterlogin', views.afterlogin_view,name='afterlogin'),
-    path('donate', views.donate_view,name='donate'),
+   
+
+    path('viewprojects/<str:projectname>', views.viewprojects_view,name='viewprojects'),
+
+    path('terms', views.terms_view,name='terms'),
+    path('privacy', views.privacy_view,name='privacy'),
+    path('refund', views.refund_view,name='refund'),
+    path('aboutus', views.aboutus_view,name='aboutus'),
+    path('contactus', views.contactus_view,name='contactus'),
 
     path('logout', LogoutView.as_view(template_name='coder/logout.html'),name='logout'),
 ]
