@@ -11,9 +11,10 @@ from django.core.mail import send_mail
 
 
 def home_view(request):
+    projects=models.Projects.objects.all()
     if request.user.is_authenticated:
         return HttpResponseRedirect('afterlogin')
-    return render(request,'coder/index.html')
+    return render(request,'coder/index.html',{'projects':projects})
 
 def is_customer(user):
     return user.groups.filter(name='CUSTOMER').exists()
@@ -23,9 +24,12 @@ def afterlogin_view(request):
         return redirect('customer-dashboard')
     else:
         return redirect('admin-dashboard')
-def viewprojects_view(request,projectname):
-    project = models.Projects.objects.get(name=projectname)
-    return render(request,'coder/viewprojects.html',{'project':project})
+def viewproject_view(request,pk):
+    project = models.Projects.objects.get(id=pk)
+    return render(request,'coder/viewproject.html',{'project':project})
+def downloadproject_view(request,pk):
+    project = models.Projects.objects.get(id=pk)
+    return render(request,'coder/downloadproject.html',{'project':project})
 
 def terms_view(request):
     return render(request,'coder/terms.html')

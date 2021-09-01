@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+          @media screen and (min-width: 601px) {
+ 
+  .cor{
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+ 
+  .cor{
+    height: 150px;
+    width: 300px;
+    text-align: center;
+  }
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  width: 50%;
+  border: 5px solid #5f6f05;
+}
+.center1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  width: 50%;
+ 
+}
+
+    </style>
+  
+</head>
+<body>
+    {% include "coder/loader_whatsapp.html" %}
+    {% include "coder/navbar.html" %}
+    <br><br><br>
+    <h6 style="text-align:center;color:blue;background-color:#e5edbe;padding-top: 4px;padding-bottom: 5px;">Help Us To Keep Service FREE</h6>
+
+    
+    <a href="/"><img src="{% static "images/donation.jpg" %}"  class="center cor"  height="200px" /></a>  
+    <br>
+    <p>
+       
+    <img src="{% static "images/thanks.png" %}" style="height: 50px; width: 50px;" class=" cor"   />
+    Even your 10rs can help us 
+    <img src="{% static "images/thanks.png" %}" style="height: 50px; width: 50px;" class=" cor"   />
+    
+    <br>
+       <span style="color: #0c056f;">Click below to donate !</span> 
+    <br>
+    <form class=" text-center"><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HdA6djewvg3CIf" async> </script> </form>
+    <br><br><br>
+    <a href="{{project.downloadlink}}"><img src="{% static "images/downloading.png" %}"  style="width: 20%; height: 15%;" class="center1"   />
+    </a>
+</p>
+    
+        
+  {% include "coder/footer.html" %}
+</body>
+</html>
