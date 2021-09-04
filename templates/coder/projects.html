@@ -54,19 +54,16 @@
         margin: 20px;
       }
     }
+    .bg-primary {
+    background-color: #0274be!important;
+}
   </style>
 </head>
 
 <body>
-  <br>
+  
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="section-heading mb-2 text-center">
-          <h3 style="font-family: 'Nunito', sans-serif;">Shop from Top Categories</h3>
-        </div>
-      </div>
-    </div>
+
 
     <div class="row">
 
@@ -81,9 +78,9 @@
 
             <p class="card-text">{{p.shortdescription}}</p>
             <p class="text-center">
-              <a href="{% url 'viewproject' p.id  %}" class="btn btn-info btn-block" style="margin-right:5px;"><i class="fas fa-eye"></i>
+              <a href="{% url 'viewproject' p.longnameurl  %}" class="btn btn-info btn-block" style="margin-right:5px;"><img src="{% static "images/view.png" %}" height="20px" width="20px">
                 View Details</a>
-              <a href="{% url 'downloadproject' p.id  %}" class="
+              <a href="{% url 'downloadproject' p.longnameurl  %}" class="
                 btn btn-success btn-block"><img src="{% static "images/download.png" %}" height="20px" width="20px">  FREE Download</a>
             </p>
 
@@ -92,7 +89,7 @@
       </div>
 
       {% if forloop.counter|divisibleby:"3" %}
-    </div>
+    </div><br>
     <div class="row">
 
       <br><br>

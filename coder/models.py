@@ -3,6 +3,7 @@ from django.db import models
 
 class Projects(models.Model):
     name=models.CharField(max_length=100)
+    longnameurl=models.CharField(max_length=200,null=True)
     description=models.CharField(max_length=2000)
     technologies=models.CharField(max_length=100)
     youtubelink=models.CharField(max_length=500)

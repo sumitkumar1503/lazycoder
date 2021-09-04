@@ -14,8 +14,8 @@ urlpatterns = [
     path('afterlogin', views.afterlogin_view,name='afterlogin'),
    
 
-    path('viewproject/<int:pk>', views.viewproject_view,name='viewproject'),
-    path('downloadproject/<int:pk>', views.downloadproject_view,name='downloadproject'),
+    path('viewproject/<str:longnameurl>', views.viewproject_view,name='viewproject'),
+    path('downloadproject/<str:longnameurl>', views.downloadproject_view,name='downloadproject'),
 
     path('terms', views.terms_view,name='terms'),
     path('privacy', views.privacy_view,name='privacy'),

@@ -18,6 +18,14 @@
       height: fit-content;
       border-radius:.0rem;
     }
+    .promo{
+      animation: promo 4s linear infinite;
+    }
+    @keyframes promo{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}
     @media screen and (min-width: 601px) {
   .xyz {
     font-size: 20px;
@@ -72,7 +80,33 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+<br><br><br>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="section-heading mb-2 text-center">
+      <h3 style="font-family: Monaco;">Shop from Top Categories</h3><br>
+    </div>
+  </div>
+</div>
+  <div class="container text-center">
+    <div class="input-group">
+ 
+      <input type="text" class="form-control" placeholder="Project Name eg. Hospital Management" aria-label="Input group example" aria-describedby="btnGroupAddon">
+      <div class="input-group-prepend">
+        <div class="input-group-text" id="btnGroupAddon"><a href="/search"><img src="{% static "images/search.png" %}" height="20px" width="20px"></a></div>
+      </div>
+    </div><br>
+    
+    <nav class="nav nav-pills nav-fill">
+      <a class="nav-item nav-link btn" style="color:white; background-color: #3498db;border-color: #3498db;" href="#">All</a> &nbsp;&nbsp;&nbsp;
+      <a class="nav-item nav-link btn " style="color:white; background-color: #34495eff;border-color: #34495eff;"  href="#"><span class="promo">Paid Project</span>
+        </a>&nbsp;&nbsp;&nbsp;
+      <a class="nav-item nav-link btn" style="color:white; background-color: #e74c3c;border-color: #e74c3c;" href="#">Free</a>&nbsp;&nbsp;&nbsp;
+      <a class="nav-item nav-link btn" style="color:white; background-color: #27ae60;border-color: #27ae60;" href="#">Certification Dumps</a>
+    </nav>
 
+  </div>
+<br><br>
 
   {% include "coder/projects.html" %}
  
@@ -84,22 +118,22 @@
 
     <div class="row mt-5">
       <div class="col-lg-3 col-sm-6 slideanim slide">
-        <h4><i class="fas fa-phone-square"></i> Contact</h4>
+        <h4 style="color: blue;"><img src="{% static "images/call.png" %}" height="20px" width="20px"> Contact</h4>
         <p class="mt-3 text-danger font-weight-bold"><a style="color: red;" class="contactlink"
             href="tel:+91 9572181024">+91 9572181024</a></p>
       </div>
       <div class="col-lg-3 col-sm-6 slideanim slide">
-        <h4><i class="fas fa-envelope"></i> Send Mail</h4>
+        <h4 style="color: blue;"><img src="{% static "images/mail.png" %}" height="30px" width="30px"> Send Mail</h4>
         <p class="mt-3 text-danger font-weight-bold"><a style="color: red;" class="contactlink"
             href="mailto:wapka1503@gmail.com">wapka1503@gmail.com</a></p>
       </div>
       <div class="col-lg-3 col-sm-6 slideanim slide">
-        <h4><i class="fas fa-address-card"></i> Office Address</h4>
+        <h4 style="color: blue;"><img src="{% static "images/address.png" %}" height="30px" width="30px"> Office Address</h4>
         <p class="mt-3 text-danger font-weight-bold"><a style="color: red;" class="contactlink"
             href="http://maps.google.com/maps?q=muzaffarpur+bihar">Muzaffarpur Bihar</a></p>
       </div>
       <div class="col-lg-3 col-sm-6 slideanim slide">
-        <h4><i class="far fa-clock"> </i> Office Hours</h4>
+        <h4 style="color: blue;"><img src="{% static "images/time.png" %}" height="27px" width="27px"> Office Hours</h4>
         <p style="color: red;" class="mt-3 font-weight-bold">9:00 AM to 7:00 PM</p>
       </div>
     </div>
