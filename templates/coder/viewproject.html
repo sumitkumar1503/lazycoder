@@ -6,32 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
-
-
-/** START CHANGES **/
-div#content {
-    position: fixed;
-    top: 80px;
-    left: 40px;
-    bottom: 25px;
-    min-width: 200px;
-    width: 40%;
-    background: black;
+        .pqr {
+  position: relative;
+  width: 100%;
+  height: min-content;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
-
-div#content iframe {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-}
-/** END CHANGES **/
-
-
-
 
 
     </style>
@@ -47,9 +28,11 @@ div#content iframe {
     
     
     <div class="center">
-      <div id="content">
-        <iframe src="https://www.youtube.com/embed/_HRqU3oP7Y8" name="frame2" id="frame2" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto" onload="" allowtransparency="false"></iframe>
-    </div>
+        <div id="content">
+    <iframe src="https://www.youtube.com/embed/_HRqU3oP7Y8" class="pqr" frameborder="0"  scrolling="auto" onload="" allowtransparency="false"></iframe>
+
+
+  </div>
       
       
       <h3 style="text-align:center;color:red;">Description : {{project.description}}</h3>
