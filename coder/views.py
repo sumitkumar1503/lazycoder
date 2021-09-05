@@ -25,12 +25,37 @@ def afterlogin_view(request):
         return redirect('customer-dashboard')
     else:
         return redirect('admin-dashboard')
+
 def viewproject_view(request,longnameurl):
     project = models.Projects.objects.get(longnameurl=longnameurl)
-    return render(request,'coder/viewproject.html',{'project':project})
+    template_name='projects/'+project.htmlpage
+    return render(request,template_name,{'project':project})
+
+
+
+
 def downloadproject_view(request,longnameurl):
     project = models.Projects.objects.get(longnameurl=longnameurl)
     return render(request,'coder/downloadproject.html',{'project':project})
+
+def showallproject_view(request):
+    projects=models.Projects.objects.all()
+    return render(request,'coder/all-projects-by-lazycoder.html',{'projects':projects})
+
+def showpaidproject_view(request):
+    projects=models.Projects.objects.all().exclude(price = 'FREE')
+    return render(request,'coder/paid-projects-by-lazycoder.html',{'projects':projects})
+
+
+def showfreeproject_view(request):
+    projects=models.Projects.objects.all().filter(price='FREE')
+    return render(request,'coder/free-projects-by-lazycoder.html',{'projects':projects})
+
+def search_view(request):
+    # whatever user write in search box we get in query
+    query = request.GET['query']
+    projects=models.Projects.objects.all().filter(name__icontains=query)
+    return render(request,'coder/search-result.html',{'projects':projects})
 
 def terms_view(request):
     return render(request,'coder/terms.html')

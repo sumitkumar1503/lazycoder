@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <title>
+    Project Development | Certification Dumps | Courses
+  </title>
+  <link rel="icon" href="{% static "images/logo.png" %}" type="image/x-icon">
+  <link            href="{% static "asset/css/all.css" %}" rel="stylesheet"> <!--load all styles -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ 
+  <style>
+    .jumotron{
+      height: fit-content;
+      border-radius:.0rem;
+    }
+    .promo{
+      animation: promo 4s linear infinite;
+    }
+    @keyframes promo{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}
+    @media screen and (min-width: 601px) {
+  .xyz {
+    font-size: 20px;
+  }
+  .cor{
+    height: 330px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .xyz {
+    font-size: 13px;
+  }
+  .cor{
+    height: 160px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  {% include "coder/loader_whatsapp.html" %}
+  {% include "coder/navbar.html" %}
+  <br><br>
+  <div class="jumbotron" style="background-color: #0274be;  padding-top: 27px;padding-bottom: 2px;border-radius:.0rem;margin-bottom: 0%;">
+    <h5 style="color: white;" class="text-center xyz">READY MADE ERROR FREE FINAL YEAR PROJECTS FROM Rs 499* ONWARDS
+    </h5>
+  </div>
+
+
+
+<br>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="section-heading mb-2 text-center">
+      <h3 style="font-family: Monaco;">All Projects By LazyCoder</h3><br>
+    </div>
+  </div>
+</div>
+<br>
+{% include "coder/searchbar.html" %}
+<br>
+
+  {% include "coder/projects.html" %}
+ 
+
+
+
+  <br><br>
+
+
+
+  {% include "coder/footer.html" %}
+
+
+
+</body>
+
+</html>

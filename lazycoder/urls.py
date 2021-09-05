@@ -16,8 +16,11 @@ urlpatterns = [
 
     path('viewproject/<str:longnameurl>', views.viewproject_view,name='viewproject'),
     path('downloadproject/<str:longnameurl>', views.downloadproject_view,name='downloadproject'),
-
+    path('all-projects-by-lazycoder', views.showallproject_view,name='all-projects-by-lazycoder'),
+    path('paid-projects-by-lazycoder', views.showpaidproject_view,name='paid-projects-by-lazycoder'),
+    path('free-projects-by-lazycoder', views.showfreeproject_view,name='free-projects-by-lazycoder'),
     path('terms', views.terms_view,name='terms'),
+    path('search', views.search_view,name='search'),
     path('privacy', views.privacy_view,name='privacy'),
     path('refund', views.refund_view,name='refund'),
     path('aboutus', views.aboutus_view,name='aboutus'),

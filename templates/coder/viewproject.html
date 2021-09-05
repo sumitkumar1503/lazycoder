@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
-        .pqr {
-  position: relative;
-  width: 100%;
-  height: min-content;
-  overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-}
 
+#content{
+ 
+  text-align: center;
+}
 
     </style>
 </head>
@@ -29,15 +26,14 @@
     
     <div class="center">
         <div id="content">
-    <iframe src="https://www.youtube.com/embed/_HRqU3oP7Y8" class="pqr" frameborder="0"  scrolling="auto" onload="" allowtransparency="false"></iframe>
-
-
+    <iframe src="https://www.youtube.com/embed/_HRqU3oP7Y8" frameborder="0"  scrolling="auto" onload="" allowtransparency="false"></iframe>
   </div>
-      
-      
-      <h3 style="text-align:center;color:red;">Description : {{project.description}}</h3>
-      <h3 style="text-align:center;color:red;">technologies: {{project.technologies}}</h3>
-      <h3 style="text-align:center;color:red;">price: {{project.price}}</h3>
+     <div style="text-align: center;">
+      {{project.description|safe}}
+     </div> 
+  
+     
+
 
     </div>
     </div>

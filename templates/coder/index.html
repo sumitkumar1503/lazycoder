@@ -88,24 +88,8 @@
     </div>
   </div>
 </div>
-  <div class="container text-center">
-    <div class="input-group">
- 
-      <input type="text" class="form-control" placeholder="Project Name eg. ecommerce" aria-label="Input group example" aria-describedby="btnGroupAddon">
-      <div class="input-group-prepend">
-        <div class="input-group-text" id="btnGroupAddon"><a href="/search"><img src="{% static "images/search.png" %}" height="20px" width="20px"></a></div>
-      </div>
-    </div><br>
-    
-    <nav class="nav nav-pills nav-fill">
-      <a class="nav-item nav-link btn" style="color:white; background-color: #3498db;border-color: #3498db;" href="#">All</a> &nbsp;&nbsp;&nbsp;
-      <a class="nav-item nav-link btn " style="color:white; background-color: #34495eff;border-color: #34495eff;"  href="#"><span class="promo">Paid Project</span>
-        </a>&nbsp;&nbsp;&nbsp;
-      <a class="nav-item nav-link btn" style="color:white; background-color: #e74c3c;border-color: #e74c3c;" href="#">Free</a>&nbsp;&nbsp;&nbsp;
-      
-        </nav>
-
-  </div>
+<br>
+{% include "coder/searchbar.html" %}
 <br>
 
   {% include "coder/projects.html" %}
