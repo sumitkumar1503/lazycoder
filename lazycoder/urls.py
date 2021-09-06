@@ -25,6 +25,7 @@ urlpatterns = [
     path('refund', views.refund_view,name='refund'),
     path('aboutus', views.aboutus_view,name='aboutus'),
     path('contactus', views.contactus_view,name='contactus'),
+    
 
     path('logout', LogoutView.as_view(template_name='coder/logout.html'),name='logout'),
 ]

@@ -80,9 +80,16 @@
             <p class="text-center">
               <a href="{% url 'viewproject' p.longnameurl  %}" class="btn btn-info btn-block" style="margin-right:5px;"><img src="{% static "images/view.png" %}" height="20px" width="20px">
                 View Details</a>
+              {% if p.price == 0 %}
               <a href="{% url 'downloadproject' p.longnameurl  %}" class="
                 btn btn-success btn-block"><img src="{% static "images/download.png" %}" height="20px" width="20px">  FREE Download</a>
-            </p>
+              {% endif %}
+              {% if p.price > 0 %}
+              <a href="{% url 'downloadproject' p.longnameurl  %}" class="
+                btn btn-primary btn-block"><img src="{% static "images/download.png" %}" height="20px" width="20px">  Pay & Download</a>
+              {% endif %}
+            
+              </p>
 
           </div>
         </div>

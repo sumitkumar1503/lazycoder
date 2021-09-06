@@ -8,7 +8,7 @@ from django.conf import settings
 from datetime import date, timedelta
 from django.db.models import Q
 from django.core.mail import send_mail
-
+import razorpay
 
 def home_view(request):
     projects=models.Projects.objects.all()[0:6]
@@ -31,24 +31,44 @@ def viewproject_view(request,longnameurl):
     template_name='projects/'+project.htmlpage
     return render(request,template_name,{'project':project})
 
+def downloadproject_view(request,longnameurl):
+    project = models.Projects.objects.get(longnameurl=longnameurl)
+    if project.price == 0:
+        return render(request,'coder/downloadproject.html',{'project':project})
+    else:
+        amount=project.price*100
+        if request.method=='POST':
+            project = models.Projects.objects.get(longnameurl=longnameurl)
+            client = razorpay.Client(auth=("rzp_test_hJTowsKJ5bDCvM", "HqFXNhnIwqYgI1TYgyW7N9Jj"))
+            order_amount = project.price*100
+            order_currency = 'INR'
+            xyz = client.order.create(dict(amount=order_amount, currency='INR', payment_capture='1'))
+            if xyz['status'] == 'created':
+                return render(request,'coder/payment-success.html',{'project':project})
+            else:
+                return render(request,'coder/payment.html',{'project':project,'amount':amount})
+        return render(request,'coder/payment.html',{'project':project,'amount':amount})
 
 
 
+'''
 def downloadproject_view(request,longnameurl):
     project = models.Projects.objects.get(longnameurl=longnameurl)
     return render(request,'coder/downloadproject.html',{'project':project})
+'''
+
 
 def showallproject_view(request):
     projects=models.Projects.objects.all()
     return render(request,'coder/all-projects-by-lazycoder.html',{'projects':projects})
 
 def showpaidproject_view(request):
-    projects=models.Projects.objects.all().exclude(price = 'FREE')
+    projects=models.Projects.objects.all().exclude(price = 0)
     return render(request,'coder/paid-projects-by-lazycoder.html',{'projects':projects})
 
 
 def showfreeproject_view(request):
-    projects=models.Projects.objects.all().filter(price='FREE')
+    projects=models.Projects.objects.all().filter(price=0)
     return render(request,'coder/free-projects-by-lazycoder.html',{'projects':projects})
 
 def search_view(request):
