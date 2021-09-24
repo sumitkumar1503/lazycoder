@@ -5,21 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+        .razorpay-payment-button{
+            background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+        }
+        form{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     {% include "coder/loader_whatsapp.html" %}
     {% include "coder/navbar.html" %}
 
-    <br><br><br><br><br>
-    
+    <br><br><br><br>
+    <p style="text-align: center;color: red;">*** This web is full secured for payment. If Amount deducted and project didnt downloaded then you can contact us with payment screenshot on below contact details ***</p>
+<br><br>
+    <h6 style="text-align: center;">You are about to Buy Project : <strong>{{project}}</strong> </h6>
+    <br>
+    <h6 style="text-align: center;">Amount : <strong>{{project.price}} INR</strong> </h6>
     <br>
     <form method="POST">
         {% csrf_token %} 
         
         <script
             src="https://checkout.razorpay.com/v1/checkout.js"
-            data-key="rzp_test_hJTowsKJ5bDCvM" 
+            data-key="rzp_live_8iylMiR7jz4h5S" 
             data-amount="{{amount}}" 
             data-currency="INR"
             
@@ -33,7 +53,8 @@
        
         </form>
 <br>
-<p style="text-align: center;">Buy Another Project <br> Search Below</p>
+<br>
+<br>
 
 {% include "coder/searchbar.html" %}
 <br><br>

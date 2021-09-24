@@ -39,11 +39,11 @@ def downloadproject_view(request,longnameurl):
         amount=project.price*100
         if request.method=='POST':
             project = models.Projects.objects.get(longnameurl=longnameurl)
-            client = razorpay.Client(auth=("rzp_test_hJTowsKJ5bDCvM", "HqFXNhnIwqYgI1TYgyW7N9Jj"))
+            client = razorpay.Client(auth=("rzp_live_8iylMiR7jz4h5S", "22ZmxzzsF8GXMelRA85Rs4bm"))
             order_amount = project.price*100
             order_currency = 'INR'
             xyz = client.order.create(dict(amount=order_amount, currency='INR', payment_capture='1'))
-            if xyz['status'] == 'created':
+            if xyz['status'] == 'captured':
                 return render(request,'coder/payment-success.html',{'project':project})
             else:
                 return render(request,'coder/payment.html',{'project':project,'amount':amount})

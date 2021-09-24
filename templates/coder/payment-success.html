@@ -5,14 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+         .download{
+            background-color: #4222b6;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+        }
+        
+    </style>
 </head>
 <body>
-    payment success
-    {{project}}
-    {{project.price}}
+    {% include "coder/navbar.html" %}
+    <br><br><br>
+    <p style="text-align: center;color:red;">*** Please download project before refreshing or clicking back button ***</p>
+ 
+    <h5 style="text-align: center;">Payment Success</h5>
+    <div  style="text-align: center;">
+        <img  src="{% static "images/success.png" %}" width="150px" height="150px" alt="">
+    </div>
+    <br>
 
-    <a href="{% static "project/movieticketbooking.zip" %}"> download</a>
-    
+
+<div style="text-align: center;">
+    <a class="download" href="{% static project.downloadlink  %}"> Download Project</a>
+
+</div>
+<br><br>
+
+{% include "coder/searchbar.html" %}
+<br><br>
+    <br><br>
+    {% include "coder/footer.html" %}
 </body>
 </html>
